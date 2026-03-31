@@ -1,0 +1,47 @@
+# Data Configuration
+DATA_CONFIG:
+  dataset_name: "MUTAG"
+  num_classes: 2
+  num_features: 7
+  node_ordering_metrics:
+    - betweenness_centrality
+  dataset_seed: 42
+
+# Model Configuration
+MODEL_CONFIG:
+  hidden_dim: 96
+  num_ig_layers: 3
+  
+  mamba_d_state: 16
+  mamba_d_conv: 4
+  mamba_expand: 2
+  
+  num_clusters: 4
+  clustering_temperature: 1.2
+  sopol_output_dim: 32
+  
+  num_mlp_layers: 2
+  mlp_hidden_dim: 128
+  
+  dropout_rate: 0.4
+
+# Training Configuration
+TRAINING_CONFIG:
+  epochs: 200
+  batch_size: 32
+  main_model_lr: 0.001
+  sg_model_lr: 0.008
+  weight_decay: 0.001
+  
+  mi_weight: 0.001
+  lambda_mod: 0.03
+  sigma: 15
+  
+  scheduler_factor: 0.7
+  scheduler_patience: 5
+  scheduler_min_lr: 1e-7
+  
+  early_stopping: true
+  early_stopping_patience: 15
+
+  seed: 42

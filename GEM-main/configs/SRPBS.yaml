@@ -1,0 +1,50 @@
+# Data Configuration
+DATA_CONFIG:
+  dataset_name: "SRPBS"
+  data_path: "/opt/data/private/00_data/SRPBS.mat"
+  num_classes: 2
+  num_features: 116
+  sparsity_threshold: 0.2
+  node_ordering_metrics:
+    - node_degree
+  dataset_seed: 42
+
+# Model Configuration
+MODEL_CONFIG:
+  hidden_dim: 96
+  num_ig_layers: 5
+  
+  mamba_d_state: 16
+  mamba_d_conv: 4
+  mamba_expand: 2
+  
+  num_clusters: 5
+  clustering_temperature: 1.5
+  sopol_output_dim: 32
+  
+  num_mlp_layers: 1
+  mlp_hidden_dim: 256
+  
+  dropout_rate: 0.1
+
+# Training Configuration
+TRAINING_CONFIG:
+  epochs: 200
+  batch_size: 32
+  main_model_lr: 0.0005
+  sg_model_lr: 0.008
+  weight_decay: 0.0005
+  
+  mi_weight: 0.05
+  lambda_mod: 0.1
+  sigma: 15
+  
+  scheduler_factor: 0.7
+  scheduler_patience: 5
+  scheduler_min_lr: 1e-7
+  
+  early_stopping: true
+  early_stopping_patience: 15
+
+  seed: 42
+
